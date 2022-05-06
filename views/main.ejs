@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
   <!--  All snippets are MIT license http://bootdey.com/license -->
-  <title>bs5 forum list - Bootdey.com</title>
+  <title>XX학교 - 메인</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,33 +23,35 @@
       <div class="col-lg-9 mb-3">
         <div class="row text-left mb-5">
           <div class="col-lg-6 mb-3 mb-sm-0">
-            <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50"
-              style="width: 100%;">
-              <select class="form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" data-toggle="select"
-                tabindex="-98" onchange="if(this.value) location.href=(this.value)">
-                <option> Main </option>
-                <option value="/class">학급 게시판</option>
-                <option value="/school">학교 게시판</option>
-                <option value="/club">동아리 게시판</option>
-                <option value="/community">커뮤니티</option>
-                <option value="/notice">공지사항</option>
-              </select>
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                게시판 종류
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="/class">학급게시판</a></li>
+                <li><a class="dropdown-item" href="/school">학교게시판</a></li>
+                <li><a class="dropdown-item" href="/club">동아리게시판</a></li>
+                <li><a class="dropdown-item" href="/community"community>커뮤니티</a></li>
+                <li><a class="dropdown-item" href="/notice"community>공지사항</a></li>
+              </ul>
             </div>
           </div>
           <div class="col-lg-6 text-lg-right">
-            <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50"
-              style="width: 100%;">
-              <select class="form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" data-toggle="select"
-                tabindex="-98">
-                <option> Filter by </option>
-                <option> Votes </option>
-                <option> Replys </option>
-                <option> Views </option>
-              </select>
-            </div>
+            <div class="dropdown">
+                          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            정렬순
+                          </a>
+
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">조회수</a></li>
+                            <li><a class="dropdown-item" href="#">게시일</a></li>
+                          </ul>
+                        </div>
           </div>
         </div>
         <!-- Board:Class -->
+
         <div>
 
           <h2>학급게시판</h2>
@@ -60,18 +62,12 @@
                     <div
                       class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0">
                       <div class="row align-items-center">
-                        <div class="col-md-8 mb-3 mb-sm-0">
-                          <h5>
+                        <div>
+                          <span style="float:left">
                             <a href="/class/text/<%= i %>" class="text-primary"><%= data.mainBoardClass[i].title %></a>
-                          </h5>
-                          <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></p>
+                          </span>
+                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></span>
 
-                        <div class="col-md-4 op-7">
-
-                          <div class="row text-center op-7">
-
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <!-- /End of post 12 -->
@@ -87,17 +83,11 @@
           <div
             class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
+              <div>
+                <span style="float:left">
                   <a href='/school/text/<%= i %>' class="text-primary"><%= data.mainBoardSchool[i].title %></a>
-                </h5>
-                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></p>
-
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-
-                </div>
-              </div>
+                </span>
+                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
             </div>
           </div>
           <!-- /End of post 8 -->
@@ -111,17 +101,11 @@
           <div
             class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
+              <div>
+                <span style="float:left">
                   <a href='/club/text/<%= i %>' class="text-primary"><%= data.mainBoardClub[i].title %></a>
-                </h5>
-                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></p>
-
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-
-                </div>
-              </div>
+                </span>
+                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
             </div>
           </div>
           <!-- /End of post 12 -->
@@ -135,17 +119,12 @@
           <div
             class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
+              <div>
+                <span style="float:left">
                   <a href='/community/text/<%= i %>' class="text-primary"><%= data.mainCommunity[i].title %></a>
-                </h5>
-                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></p>
+                </span>
+                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></span>
 
-              </div>
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-
-                </div>
               </div>
             </div>
           </div>
@@ -160,18 +139,13 @@
           <div
             class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
             <div class="row align-items-center">
-              <div class="col-md-8 mb-3 mb-sm-0">
-                <h5>
+              <div>
+                <span style="float:left">
                   <a href='/notice/text/<%= i %>' class="text-primary"><%= data.mainNotice[i].title %></a>
-                </h5>
-                <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#">
-                    <%= data.mainNotice[i].regDate %></a></p>
+                </span>
+                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#">
+                    <%= data.mainNotice[i].regDate %></a></span>
 
-              </div>
-              <div class="col-md-4 op-7">
-                <div class="row text-center op-7">
-
-                </div>
               </div>
             </div>
           </div>
@@ -185,19 +159,14 @@
         <div
           class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
           <div class="row align-items-center">
-            <div class="col-md-8 mb-3 mb-sm-0">
-              <h5>
+            <div>
+              <span style="float:left">
                 <a href="#" class="text-primary"><%= data.mainCalendar[i].date %></a>
-              </h5>
-              <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCalendar[i].regDate %></a></p>
+              </span>
+              <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCalendar[i].regDate %></a></span>
             </div>
-            <div class="col-md-4 op-7">
-              <div class="row text-center op-7">
                 <div class="col px-1"> <span class="d-block text-sm"><%= data.mainCalendar[i].event %>
                   </span> </div>
-
-              </div>
-            </div>
           </div>
         </div>
         <% } %>
@@ -249,36 +218,6 @@
 
                 <% } %>
         <!-- Sidebar content -->
-        <div class="col-lg-3 mb-4 mb-lg-0 px-lg-0 mt-lg-0">
-          <div
-            style="visibility: hidden; display: none; width: 285px; height: 801px; margin: 0px; float: none; position: static; inset: 85px auto auto;">
-          </div>
-          <div
-            data-settings="{&quot;parent&quot;:&quot;#content&quot;,&quot;mind&quot;:&quot;#header&quot;,&quot;top&quot;:10,&quot;breakpoint&quot;:992}"
-            data-toggle="sticky" class="sticky" style="top: 85px;">
-            <div class="sticky-inner">
-              <a class="btn btn-lg btn-block btn-success rounded-0 py-4 mb-3 bg-op-6 roboto-bold" href="">문의 사항</a>
-              <div class="bg-white text-sm">
-                <h4 class="px-3 py-4 op-5 m-0 roboto-bold">
-                  통계
-                </h4>
-                <hr class="my-0">
-                <div class="row text-center d-flex flex-row op-7 mx-0">
-                  <div class="col-sm-6 flex-ew text-center py-3 border-bottom border-right"> <a
-                      class="d-block lead font-weight-bold" href="#"><%= data.mainCommunity.length %></a> 개의 글 </div>
-                  <div class="col-sm-6 col flex-ew text-center py-3 border-bottom mx-0"> <a
-                      class="d-block lead font-weight-bold" href="#"><%= data.mainNotice.length %></a> 개의 공지사항 </div>
-                </div>
-                <div class="row d-flex flex-row op-7">
-                  <div class="col-sm-6 flex-ew text-center py-3 border-right mx-0"> <a
-                      class="d-block lead font-weight-bold" href="#"><%= data.getList.length %></a> 명 </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
