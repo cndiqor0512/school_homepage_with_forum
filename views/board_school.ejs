@@ -17,6 +17,10 @@
     <div>
     <h1>XX학교</h1> <button type="button" class="btn btn-outline-secondary"><a href="/main">메인화면</a></button>
             <hr>
+                  <% if(loginSuccess){ %> <button onclick="">로그아웃</button> <% } else { %>
+                  <button onclick="location.href='/register'">회원가입</button>
+                  <button onclick="location.href='/login'">로그인</button>
+                  <% } %>
             <br>
 <!--        --><!-- Main content -->
 <!--       <div class="col-lg-9 mb-3"> -->
