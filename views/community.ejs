@@ -11,49 +11,20 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:rgb(52, 58, 64);">
   <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <div class="container">
     <div>
-    <h1>XX학교</h1> <button type="button" class="btn btn-outline-secondary"><a href="/main">메인화면</a></button>
+    <h1 style="color:white">XX학교</h1> <button type="button" class="btn btn-outline-secondary"><a href="/main">메인화면</a></button>
             <hr>
-                  <% if(loginSuccess){ %> <button onclick="">로그아웃</button> <% } else { %>
-                  <button onclick="location.href='/register'">회원가입</button>
-                  <button onclick="location.href='/login'">로그인</button>
+                  <% if(loginSuccess){ %> <button class="btn btn-dark" onclick="location.href='/logout'">로그아웃</button> <% } else { %>
+                  <button class="btn btn-light" onclick="location.href='/register'">회원가입</button>
+                  <button class="btn btn-light" onclick="location.href='/login'">로그인</button>
                   <% } %>
             <br>
-<!--        --><!-- Main content -->
-<!--       <div class="col-lg-9 mb-3"> -->
-<!--         <div class="row text-left mb-5"> -->
-<!--           <div class="col-lg-6 mb-3 mb-sm-0"> -->
-<!--             <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" -->
-<!--               style="width: 100%;"> -->
-<!--               <select class="form-control form-control-lg bg-white bg-op-9 text-sm w-lg-50" data-toggle="select" -->
-<!--                 tabindex="-98"> -->
-<!--                 <option> Categories </option> -->
-<!--                 <option> Learn </option> -->
-<!--                 <option> Share </option> -->
-<!--                 <option> Build </option> -->
-<!--               </select> -->
-<!--             </div> -->
-<!--           </div> -->
-<!--           <div class="col-lg-6 text-lg-right"> -->
-<!--             <div class="dropdown bootstrap-select form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" -->
-<!--               style="width: 100%;"> -->
-<!--               <select class="form-control form-control-lg bg-white bg-op-9 ml-auto text-sm w-lg-50" data-toggle="select" -->
-<!--                 tabindex="-98"> -->
-<!--                 <option> Filter by </option> -->
-<!--                 <option> Votes </option> -->
-<!--                 <option> Replys </option> -->
-<!--                 <option> Views </option> -->
-<!--               </select> -->
-<!--             </div> -->
-<!--           </div> -->
-<!--         </div> -->
-        <!-- Board:Class -->
         <div>
 
-          <h2>커뮤니티</h2>
+          <h2 style="color:white">커뮤니티</h2>
 
           <% for(var i = 0; i < data.length; i++) { %>
                   <div>

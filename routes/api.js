@@ -42,18 +42,24 @@ const options_register = {
     uri: "http://localhost:8080/api/user"
 }
 
+const options_logout = {
+    uri: "http://localhost:8080/api/login"
+}
+
 let options_login = {uri: 'http://localhost:8080/api/login', method: 'POST', body: {}, json: true}
 
-var loginSuccess=false;
+let loginSuccess = false;
 /* GET home page. */
 
 router.get('/main', function (req, res, next) {
 
     request(options, function (err, response, body) {
         //callback
-        body.loginSuccess = false;
-        console.log(body);
-        res.render("main", {data: JSON.parse(body), loginSuccess: loginSuccess});
+        let bodyParsedMain = JSON.parse(body);
+        bodyParsedMain.loginSuccess = loginSuccess;
+        console.log(bodyParsedMain.loginSuccess);
+        console.log(loginSuccess);
+        res.render("main", {data: JSON.parse(body), loginSuccess: bodyParsedMain.loginSuccess});
     })
 })
 
@@ -186,18 +192,34 @@ router.post('/login', function (req, res, next) {
         console.log(req.body);
         console.log(response.body);
 
-        if(response.body.name != null){
-            loginSuccess=true;
-        }else{
-            loginSuccess=false;
+        if (response.body.name != null) {
+            loginSuccess = true;
+        } else {
+            loginSuccess = false;
         }
+
         request(options, function (err, response, body) {
+            let bodyParsed = JSON.parse(body);
+            bodyParsed.loginSuccess = loginSuccess;
             //callback
             console.log(body);
-            res.render("main", {data: JSON.parse(body), loginSuccess:loginSuccess});
+            console.log(loginSuccess);
+            console.log(bodyParsed);
+            res.render("main", {data: bodyParsed, loginSuccess: bodyParsed.loginSuccess});
         })
     });
 
+})
+
+router.get('/logout', function (req, res, next) {
+    //callback
+
+    request(options, function (err, response, body) {
+        loginSuccess = false;
+        let bodyParsedLogout = JSON.parse(body);
+        bodyParsedLogout.loginSuccess = loginSuccess;
+        res.render("main", {data: bodyParsedLogout, loginSuccess: bodyParsedLogout.loginSuccess});
+    })
 })
 
 
