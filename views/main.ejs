@@ -64,80 +64,104 @@
 
         <div>
         <!--첫째 줄-->
-        <div style="height:350px">
-        <div style="width:34%; float:left">
-              <h2 style="color: white">학교</h2>
-              <ul class="list-group">
-                <% for(var i = 0; i < data.mainBoardSchool.length; i++) { %>
-                    <li class="list-group-item" style="height:70px">
-                            <a href="/school/text/<%= i %>" class="text-primary"><%= data.mainBoardSchool[i].title %></a>
-                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
-                    </li>
-                  <% } %>
-              </ul>
-            </div>
-            <div style="width:33%; float:right">
-              <h2 style="color: white">동아리</h2>
-              <ul class="list-group">
-                <% for(var i = 0; i < data.mainBoardClub.length; i++) { %>
+        <div style="height:400px">
+                <div class="row">
+                    <div class="col-sm">
+                    <div>
+                                  <h2 style="color: white">학교</h2>
+                                  <ul class="list-group">
+                                    <% for(var i = 0; i < data.mainBoardSchool.length; i++) { %>
+                                        <li class="list-group-item" style="height:70px">
+                                                <a href="/school/text/<%= i %>" class="text-primary"><%= data.mainBoardSchool[i].title %></a>
+                                              <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
+                                        </li>
+                                      <% } %>
+                                  </ul>
+                                </div>
+                    </div>
+                    <div class="col-sm">
+                    <div>
+                                  <h2 style="color: white">동아리</h2>
+                                  <ul class="list-group">
+                                    <% for(var i = 0; i < data.mainBoardClub.length; i++) { %>
 
-             <li class="list-group-item" style="height:70px">
-             <a href="/club/text/<%= i %>" class="text-primary"><%= data.mainBoardClub[i].title %></a>
-             <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClub[i].regDate %></a></span>
-              </li>
-               <% } %>
-              </ul>
-            </div>
-            <div style="width:33%; float:right">
-              <h2 style="color: white">학급</h2>
-              <ul class="list-group">
-                <% for(var i = 0; i < data.mainBoardClass.length; i++) { %>
-                    <li class="list-group-item" style="height:70px">
-                            <a href="/club/text/<%= i %>" class="text-primary"><%= data.mainBoardClass[i].title %></a>
-                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></span>
-                    </li>
-                  <% } %>
-              </ul>
-            </div>
+                                 <li class="list-group-item" style="height:70px">
+                                 <a href="/club/text/<%= i %>" class="text-primary"><%= data.mainBoardClub[i].title %></a>
+                                 <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClub[i].regDate %></a></span>
+                                  </li>
+                                   <% } %>
+                                  </ul>
+                                </div>
+                    </div>
+                    <div class="col-sm"
+                    <div>
+                                  <h2 style="color: white">학급</h2>
+                                  <ul class="list-group">
+                                    <% for(var i = 0; i < data.mainBoardClass.length; i++) { %>
+                                        <li class="list-group-item" style="height:70px">
+                                                <a href="/class/text/<%= i %>" class="text-primary"><%= data.mainBoardClass[i].title %></a>
+                                              <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></span>
+                                        </li>
+                                      <% } %>
+                                  </ul>
+                    </div>
+                    </div>
+                  </div>
+
+
+
         </div>
         <br>
         <!--둘째 줄-->
-        <div style="height:350px">
-        <div style="width:34%; float:left">
-                      <h2 style="color: white">커뮤니티</h2>
-                      <ul class="list-group">
-                        <% for(var i = 0; i < data.mainCommunity.length; i++) { %>
-                            <!-- End of post 12 -->
-                            <li class="list-group-item" style="height:70px">
-                                    <a href="/community/text/<%= i %>" class="text-primary"><%= data.mainCommunity[i].title %></a>
-                                  <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></span>
-                            </li>
-                          <% } %>
-                      </ul>
-                    </div>
-                    <div style="width:33%; float:right">
-                      <h2 style="color: white">공지사항</h2>
-                      <ul class="list-group">
-                        <% for(var i = 0; i < data.mainNotice.length; i++) { %>
+        <div style="height:420px">
+        <div class="row">
+        <div class="col-sm">
+        <div>
+                              <h2 style="color: white">커뮤니티</h2>
+                              <ul class="list-group">
+                                <% for(var i = 0; i < data.mainCommunity.length; i++) { %>
+                                    <!-- End of post 12 -->
+                                    <li class="list-group-item" style="height:70px">
+                                            <a href="/community/text/<%= i %>" class="text-primary"><%= data.mainCommunity[i].title %></a>
+                                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></span>
+                                    </li>
+                                  <% } %>
+                              </ul>
+                            </div>
+        </div>
+        <div class="col-sm">
+        <div>
+                              <h2 style="color: white">공지사항</h2>
+                              <ul class="list-group">
+                                <% for(var i = 0; i < data.mainNotice.length; i++) { %>
 
-                     <li class="list-group-item" style="height:70px">
-                     <a href="/notice/text/<%= i %>" class="text-primary"><%= data.mainNotice[i].title %></a>
-                     <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainNotice[i].regDate %></a></span>
-                      </li>
-                       <% } %>
-                      </ul>
-                    </div>
-                    <div style="width:33%; float:right">
-                      <h2 style="color: white">일정</h2>
-                      <ul class="list-group"">
-                        <% for(var i = 0; i < data.mainCalendar.length; i++) { %>
-                            <li class="list-group-item" style="height:70px">
-                                    <a href="#" class="text-primary"><%= data.mainCalendar[i].event %></a>
-                                  <span class="text-sm" style="float:right"><span class="op-6">on</span> <a class="text-black" href="#"><%= data.mainCalendar[i].date %></a></span>
-                            </li>
-                          <% } %>
-                      </ul>
-                    </div>
+                             <li class="list-group-item" style="height:70px">
+                             <a href="/notice/text/<%= i %>" class="text-primary"><%= data.mainNotice[i].title %></a>
+                             <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainNotice[i].regDate %></a></span>
+                              </li>
+                               <% } %>
+                              </ul>
+                            </div>
+        </div>
+        <div class="col-sm">
+                <div>
+                                      <h2 style="color: white">일정</h2>
+                                      <ul class="list-group"">
+                                        <% for(var i = 0; i < data.mainCalendar.length; i++) { %>
+                                            <li class="list-group-item" style="height:70px">
+                                                     <%= data.mainCalendar[i].event %>
+                                                  <span class="text-sm" style="float:right"><span class="op-6">on</span> <a class="text-black" href="#"><%= data.mainCalendar[i].date %></a></span>
+                                            </li>
+                                          <% } %>
+                                      </ul>
+                                    </div>
+        </div>
+
+        </div>
+
+
+
+
         </div>
         <!--셋째 줄-->
         <div style="height:700px">
