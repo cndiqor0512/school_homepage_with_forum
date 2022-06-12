@@ -63,169 +63,275 @@
         <!-- Board:Class -->
 
         <div>
-
-          <h2 style="color:white">학급게시판</h2>
-
-          <% for(var i = 0; i < data.mainBoardClass.length; i++) { %>
-                  <div style="width=50%">
-                    <!-- End of post 12 -->
-                    <div class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0">
-                      <div class="row align-items-center">
-                        <div>
-                          <span style="float:left">
-                            <a href="/class/text/<%= i %>" class="text-primary"><%= data.mainBoardClass[i].title %></a>
-                          </span>
-                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></span>
-
-                      </div>
-                    </div>
-                    <!-- /End of post 12 -->
-                  </div>
+        <!--첫째 줄-->
+        <div style="height:350px">
+        <div style="width:34%; float:left">
+              <h2 style="color: white">학교</h2>
+              <ul class="list-group">
+                <% for(var i = 0; i < data.mainBoardSchool.length; i++) { %>
+                    <li class="list-group-item" style="height:70px">
+                            <a href="/school/text/<%= i %>" class="text-primary"><%= data.mainBoardSchool[i].title %></a>
+                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
+                    </li>
                   <% } %>
-        <!-- Board:School -->
-
-        <h2 style="color:white">학교게시판</h2>
-        <% for(var i = 0; i < data.mainBoardSchool.length; i++) { %>
-        <div>
-
-          <!-- End of post 8 -->
-          <div
-            class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div>
-                <span style="float:left">
-                  <a href='/school/text/<%= i %>' class="text-primary"><%= data.mainBoardSchool[i].title %></a>
-                </span>
-                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
+              </ul>
             </div>
-          </div>
-          <!-- /End of post 8 -->
-        </div>
-        <% } %>
-        <!-- Board:Club -->
-        <h2 style="color:white">동아리게시판</h2>
-        <% for(var i = 0; i < data.mainBoardClub.length; i++) { %>
-        <div>
-          <!-- End of post 12 -->
-          <div
-            class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div>
-                <span style="float:left">
-                  <a href='/club/text/<%= i %>' class="text-primary"><%= data.mainBoardClub[i].title %></a>
-                </span>
-                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span>
-            </div>
-          </div>
-          <!-- /End of post 12 -->
-        </div>
-        <% } %>
-        <!-- Community -->
-        <h2 style="color:white">학교 커뮤니티</h2>
-        <% for(var i = 0; i < data.mainCommunity.length; i++) { %>
-        <div>
-          <!-- End of post 14 -->
-          <div
-            class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div>
-                <span style="float:left">
-                  <a href='/community/text/<%= i %>' class="text-primary"><%= data.mainCommunity[i].title %></a>
-                </span>
-                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></span>
+            <div style="width:33%; float:right">
+              <h2 style="color: white">동아리</h2>
+              <ul class="list-group">
+                <% for(var i = 0; i < data.mainBoardClub.length; i++) { %>
 
-              </div>
+             <li class="list-group-item" style="height:70px">
+             <a href="/club/text/<%= i %>" class="text-primary"><%= data.mainBoardClub[i].title %></a>
+             <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClub[i].regDate %></a></span>
+              </li>
+               <% } %>
+              </ul>
             </div>
-          </div>
-          <!-- /End of post 14 -->
-        </div>
-        <% } %>
-        <!-- Notice -->
-        <h2 style="color:white">공지사항</h2>
-        <% for(var i = 0; i < data.mainNotice.length; i++) { %>
-        <div>
-          <!-- End of post 15 -->
-          <div
-            class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
-            <div class="row align-items-center">
-              <div>
-                <span style="float:left">
-                  <a href='/notice/text/<%= i %>' class="text-primary"><%= data.mainNotice[i].title %></a>
-                </span>
-                <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#">
-                    <%= data.mainNotice[i].regDate %></a></span>
-
-              </div>
+            <div style="width:33%; float:right">
+              <h2 style="color: white">학급</h2>
+              <ul class="list-group">
+                <% for(var i = 0; i < data.mainBoardClass.length; i++) { %>
+                    <li class="list-group-item" style="height:70px">
+                            <a href="/club/text/<%= i %>" class="text-primary"><%= data.mainBoardClass[i].title %></a>
+                          <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></span>
+                    </li>
+                  <% } %>
+              </ul>
             </div>
-          </div>
-          <!-- /End of post 15 -->
         </div>
-       <% } %>
+        <br>
+        <!--둘째 줄-->
+        <div style="height:350px">
+        <div style="width:34%; float:left">
+                      <h2 style="color: white">커뮤니티</h2>
+                      <ul class="list-group">
+                        <% for(var i = 0; i < data.mainCommunity.length; i++) { %>
+                            <!-- End of post 12 -->
+                            <li class="list-group-item" style="height:70px">
+                                    <a href="/community/text/<%= i %>" class="text-primary"><%= data.mainCommunity[i].title %></a>
+                                  <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></span>
+                            </li>
+                          <% } %>
+                      </ul>
+                    </div>
+                    <div style="width:33%; float:right">
+                      <h2 style="color: white">공지사항</h2>
+                      <ul class="list-group">
+                        <% for(var i = 0; i < data.mainNotice.length; i++) { %>
 
-        <!-- 일정 -->
-        <h2 style="color:white">일정</h2>
-        <% for(var i = 0; i < data.mainCalendar.length; i++) { %>
-        <div
-          class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
-          <div class="row align-items-center">
-            <div>
-              <span style="float:left">
-                <a href="#" class="text-primary"><%= data.mainCalendar[i].date %> 일자 일정</a>
-              </span>
-              <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCalendar[i].regDate %></a></span>
-            </div>
-                <div class="col px-1"> <span class="d-block text-sm">&nbsp;&nbsp;<%= data.mainCalendar[i].event %>
-                  </span> </div>
-          </div>
+                     <li class="list-group-item" style="height:70px">
+                     <a href="/notice/text/<%= i %>" class="text-primary"><%= data.mainNotice[i].title %></a>
+                     <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainNotice[i].regDate %></a></span>
+                      </li>
+                       <% } %>
+                      </ul>
+                    </div>
+                    <div style="width:33%; float:right">
+                      <h2 style="color: white">일정</h2>
+                      <ul class="list-group"">
+                        <% for(var i = 0; i < data.mainCalendar.length; i++) { %>
+                            <li class="list-group-item" style="height:70px">
+                                    <a href="#" class="text-primary"><%= data.mainCalendar[i].event %></a>
+                                  <span class="text-sm" style="float:right"><span class="op-6">on</span> <a class="text-black" href="#"><%= data.mainCalendar[i].date %></a></span>
+                            </li>
+                          <% } %>
+                      </ul>
+                    </div>
         </div>
-        <% } %>
-        <!-- 급식 -->
-                <h2 style="color:white">급식</h2>
-                <% for(var i = 0; i < data.mainFood.length; i++) { %>
-                <span>
-                  <span
-                    class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0">
-                    <span class="row align-items-center">
-                      <span class="col-md-8 mb-3 mb-sm-0">
-                        <h5>
-                          <a href="#" class="text-primary"><%= data.mainFood[i].date %> 일자 급식 </a>
-                        </h5>
-                        <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainFood[i].regDate %></a></p>
-
-                      </span>
-                      <span>
-                        <span>
-                        <div class="container">
-                          <div class="row align-items-end">
-                            <div class="col">
+        <!--셋째 줄-->
+        <div style="height:700px">
+        <h2 style="color: white">급식</h2>
+        <div class="row">
+         <% for(var i = 0; i < data.mainFood.length; i++) { %>
+                <div class="col-sm">
+                  <ul class="list-group">
+                    <li class="list-group-item active"><a href="#"style="color:white"><%= data.mainFood[i].date %> 일자 급식 </a></li>
+                            <li class="list-group-item">
                               <%= data.mainFood[i].food1 %>
-                            </div>
-                            <div class="col">
+                            </li>
+                            <li class="list-group-item">
                               <%= data.mainFood[i].food2 %>
-                            </div>
-                            <div class="col">
+                            </li>
+                            <li class="list-group-item">
                               <%= data.mainFood[i].food3 %>
-                            </div>
-                            <div class="col">
+                            </li>
+                            <li class="list-group-item">
                               <%= data.mainFood[i].food4 %>
-                            </div>
-                            <div class="col">
+                            </li>
+                            <li class="list-group-item">
                               <%= data.mainFood[i].food5 %>
-                            </div>
-                            <div class="col">
+                            </li>
+                            <li class="list-group-item" style="height:45px">
                               <%= data.mainFood[i].food6 %>
-                            </div>
-
-
-                          </div>
-                        </div>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
-                </span>
-
+                            </li>                  </ul>
+                </div>
                 <% } %>
+                </div>
+          </div>
+
+<!--           <h2 style="color:white">학급게시판</h2> -->
+
+<!--           <% for(var i = 0; i < data.mainBoardClass.length; i++) { %> -->
+<!--                   <div style="width=50%"> -->
+<!--                      --><!-- End of post 12 -->
+<!--                     <div class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--                       <div class="row align-items-center"> -->
+<!--                         <div> -->
+<!--                           <span style="float:left"> -->
+<!--                             <a href="/class/text/<%= i %>" class="text-primary"><%= data.mainBoardClass[i].title %></a> -->
+<!--                           </span> -->
+<!--                           <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardClass[i].regDate %></a></span> -->
+
+<!--                       </div> -->
+<!--                     </div> -->
+<!--                      --><!-- /End of post 12 -->
+<!--                   </div> -->
+<!--                   <% } %> -->
+<!--          --><!-- Board:School -->
+
+<!--         <h2 style="color:white">학교게시판</h2> -->
+<!--         <% for(var i = 0; i < data.mainBoardSchool.length; i++) { %> -->
+<!--         <div> -->
+
+<!--            --><!-- End of post 8 -->
+<!--           <div -->
+<!--             class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--             <div class="row align-items-center"> -->
+<!--               <div> -->
+<!--                 <span style="float:left"> -->
+<!--                   <a href='/school/text/<%= i %>' class="text-primary"><%= data.mainBoardSchool[i].title %></a> -->
+<!--                 </span> -->
+<!--                 <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--            --><!-- /End of post 8 -->
+<!--         </div> -->
+<!--         <% } %> -->
+<!--          --><!-- Board:Club -->
+<!--         <h2 style="color:white">동아리게시판</h2> -->
+<!--         <% for(var i = 0; i < data.mainBoardClub.length; i++) { %> -->
+<!--         <div> -->
+<!--            --><!-- End of post 12 -->
+<!--           <div -->
+<!--             class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--             <div class="row align-items-center"> -->
+<!--               <div> -->
+<!--                 <span style="float:left"> -->
+<!--                   <a href='/club/text/<%= i %>' class="text-primary"><%= data.mainBoardClub[i].title %></a> -->
+<!--                 </span> -->
+<!--                 <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainBoardSchool[i].regDate %></a></span> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--            --><!-- /End of post 12 -->
+<!--         </div> -->
+<!--         <% } %> -->
+<!--          --><!-- Community -->
+<!--         <h2 style="color:white">학교 커뮤니티</h2> -->
+<!--         <% for(var i = 0; i < data.mainCommunity.length; i++) { %> -->
+<!--         <div> -->
+<!--            --><!-- End of post 14 -->
+<!--           <div -->
+<!--             class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--             <div class="row align-items-center"> -->
+<!--               <div> -->
+<!--                 <span style="float:left"> -->
+<!--                   <a href='/community/text/<%= i %>' class="text-primary"><%= data.mainCommunity[i].title %></a> -->
+<!--                 </span> -->
+<!--                 <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCommunity[i].regDate %></a></span> -->
+
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--            --><!-- /End of post 14 -->
+<!--         </div> -->
+<!--         <% } %> -->
+<!--          --><!-- Notice -->
+<!--         <h2 style="color:white">공지사항</h2> -->
+<!--         <% for(var i = 0; i < data.mainNotice.length; i++) { %> -->
+<!--         <div> -->
+<!--            --><!-- End of post 15 -->
+<!--           <div -->
+<!--             class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--             <div class="row align-items-center"> -->
+<!--               <div> -->
+<!--                 <span style="float:left"> -->
+<!--                   <a href='/notice/text/<%= i %>' class="text-primary"><%= data.mainNotice[i].title %></a> -->
+<!--                 </span> -->
+<!--                 <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"> -->
+<!--                     <%= data.mainNotice[i].regDate %></a></span> -->
+
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--            --><!-- /End of post 15 -->
+<!--         </div> -->
+<!--        <% } %> -->
+
+<!--          --><!-- 일정 -->
+<!--         <h2 style="color:white">일정</h2> -->
+<!--         <% for(var i = 0; i < data.mainCalendar.length; i++) { %> -->
+<!--         <div -->
+<!--           class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--           <div class="row align-items-center"> -->
+<!--             <div> -->
+<!--               <span style="float:left"> -->
+<!--                 <a href="#" class="text-primary"><%= data.mainCalendar[i].date %> 일자 일정</a> -->
+<!--               </span> -->
+<!--               <span class="text-sm" style="float:right"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainCalendar[i].regDate %></a></span> -->
+<!--             </div> -->
+<!--                 <div class="col px-1"> <span class="d-block text-sm">&nbsp;&nbsp;<%= data.mainCalendar[i].event %> -->
+<!--                   </span> </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--         <% } %> -->
+<!--          --><!-- 급식 -->
+<!--                 <h2 style="color:white">급식</h2> -->
+<!--                 <% for(var i = 0; i < data.mainFood.length; i++) { %> -->
+<!--                 <span> -->
+<!--                   <span -->
+<!--                     class="card row-hover pos-relative py-3 px-3 mb-3 border-primary border-top-0 border-right-0 border-bottom-0 rounded-0"> -->
+<!--                     <span class="row align-items-center"> -->
+<!--                       <span class="col-md-8 mb-3 mb-sm-0"> -->
+<!--                         <h5> -->
+<!--                           <a href="#" class="text-primary"><%= data.mainFood[i].date %> 일자 급식 </a> -->
+<!--                         </h5> -->
+<!--                         <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data.mainFood[i].regDate %></a></p> -->
+
+<!--                       </span> -->
+<!--                       <span> -->
+<!--                         <span> -->
+<!--                         <div class="container"> -->
+<!--                           <div class="row align-items-end"> -->
+<!--                             <div class="col"> -->
+<!--                               <%= data.mainFood[i].food1 %> -->
+<!--                             </div> -->
+<!--                             <div class="col"> -->
+<!--                               <%= data.mainFood[i].food2 %> -->
+<!--                             </div> -->
+<!--                             <div class="col"> -->
+<!--                               <%= data.mainFood[i].food3 %> -->
+<!--                             </div> -->
+<!--                             <div class="col"> -->
+<!--                               <%= data.mainFood[i].food4 %> -->
+<!--                             </div> -->
+<!--                             <div class="col"> -->
+<!--                               <%= data.mainFood[i].food5 %> -->
+<!--                             </div> -->
+<!--                             <div class="col"> -->
+<!--                               <%= data.mainFood[i].food6 %> -->
+<!--                             </div> -->
+
+
+<!--                           </div> -->
+<!--                         </div> -->
+<!--                         </span> -->
+<!--                       </span> -->
+<!--                     </span> -->
+<!--                   </span> -->
+<!--                 </span> -->
+
+<!--                 <% } %> -->
         <!-- Sidebar content -->
       </div>
     </div>
