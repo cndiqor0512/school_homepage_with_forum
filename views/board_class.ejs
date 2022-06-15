@@ -2,90 +2,104 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-  <!--  All snippets are MIT license http://bootdey.com/license -->
-  <title>학급 게시판</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>학급 게시판</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body style="background-color:rgb(52, 58, 64);">
-  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-  <div class="container">
-    <div>
-        <!-- Board:Class -->
-        <h1 style="color:white">XX학교</h1><button type="button" class="btn btn-outline-secondary"><a href="/main">메인화면</a></button>
-        <hr>
-              <% if(loginSuccess){ %> <button class="btn btn-dark" onclick="location.href='/logout'">로그아웃</button> <% } else { %>
-              <button class="btn btn-light" onclick="location.href='/register'">회원가입</button>
-              <button class="btn btn-light"onclick="location.href='/login'">로그인</button>
-              <% } %>
-        <br>
+<body style="background-color:rgb(245, 252, 255);">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <div class="container">
         <div>
+            <!-- Board:Class -->
+            <h1 style="font-weight:bold">XX학교</h1><button type="button" class="btn btn-outline-secondary"><a
+                    href="/main">메인화면</a></button>
+            <hr>
+            <% if(loginSuccess){ %> <button class="btn btn-secondary" onclick="location.href='/logout'">로그아웃</button>
+                <% } else { %>
+                    <button class="btn btn-primary" onclick="location.href='/register'">회원가입</button>
+                    <button class="btn btn-primary" onclick="location.href='/login'">로그인</button>
+                    <% } %>
+                        <br>
+                        <div>
 
-          <h2 style="color:white">학급게시판</h2>
+                            <h2>학급게시판</h2>
 
-          <% for(var i = 0; i < data.length; i++) { %>
-                  <div>
-                    <!-- End of post 12 -->
-                    <div
-                      class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0">
-                      <div class="row align-items-center">
-                        <div class="col-md-8 mb-3 mb-sm-0">
-                          <h5>
-                            <a href='/class/text/<%= i %>' class="text-primary"><%= data[i].title %></a>
+                            <% for(var i=0; i < data.length; i++) { %>
+                                <div>
+                                    <!-- End of post 12 -->
+                                    <div
+                                        class="card row-hover pos-relative py-3 px-3 mb-3 border-danger border-top-0 border-right-0 border-bottom-0 rounded-0">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-8 mb-3 mb-sm-0">
+                                                <h5>
+                                                    <a style="font-size:23px" href='/class/text/<%= i %>' class="text-primary">
+                                                        <%= data[i].title %>
+                                                    </a>
 
-                          </h5>
-                          <p class="text-sm"><span class="op-6">Posted</span> <a class="text-black" href="#"><%= data[i].regDate %></a></p>
+                                                </h5>
 
-                        <div class="col-md-4 op-7">
-                          <div class="row text-center op-7">
 
-                          </div>
+                                                <div class="col-md-4 op-7">
+                                                    <div class="row text-center op-7">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="text-align:right">
+                                                <p class="text-sm"><span class="op-6">Posted</span> <a
+                                                        class="text-black" href="#">
+                                                    <%= data[i].regDate %>
+                                                </a></p>
+                                            </div>
+                                        </div>
+                                        <!-- /End of post 12 -->
+                                    </div>
+                                    <% } %>
+                                        <!-- Board:School -->
+
+                                        <!-- Sidebar content -->
+                                        <div class="col-lg-3 mb-4 mb-lg-0 px-lg-0 mt-lg-0">
+                                            <div
+                                                style="visibility: hidden; display: none; width: 285px; height: 801px; margin: 0px; float: none; position: static; inset: 85px auto auto;">
+                                            </div>
+                                            <div data-settings="{&quot;parent&quot;:&quot;#content&quot;,&quot;mind&quot;:&quot;#header&quot;,&quot;top&quot;:10,&quot;breakpoint&quot;:992}"
+                                                data-toggle="sticky" class="sticky" style="top: 85px;">
+                                                <div class="sticky-inner">
+                                                    <a class="btn btn-lg btn-block btn-success rounded-0 py-4 mb-3 bg-op-6 roboto-bold"
+                                                        href="">문의 사항</a>
+                                                    <div class="bg-white text-sm">
+                                                        <h4 class="px-3 py-4 op-5 m-0 roboto-bold">
+                                                            통계
+                                                        </h4>
+                                                        <hr class="my-0">
+                                                        <div class="row text-center d-flex flex-row op-7 mx-0">
+                                                            <div
+                                                                class="col-sm-6 flex-ew text-center py-3 border-bottom border-right">
+                                                                <a class="d-block lead font-weight-bold" href="#">
+                                                                    <%= data.length %>
+                                                                </a> 개의 글 </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
                         </div>
-                      </div>
-                    </div>
-                    <!-- /End of post 12 -->
-                  </div>
-                  <% } %>
-        <!-- Board:School -->
-
-        <!-- Sidebar content -->
-        <div class="col-lg-3 mb-4 mb-lg-0 px-lg-0 mt-lg-0">
-          <div
-            style="visibility: hidden; display: none; width: 285px; height: 801px; margin: 0px; float: none; position: static; inset: 85px auto auto;">
-          </div>
-          <div
-            data-settings="{&quot;parent&quot;:&quot;#content&quot;,&quot;mind&quot;:&quot;#header&quot;,&quot;top&quot;:10,&quot;breakpoint&quot;:992}"
-            data-toggle="sticky" class="sticky" style="top: 85px;">
-            <div class="sticky-inner">
-              <a class="btn btn-lg btn-block btn-success rounded-0 py-4 mb-3 bg-op-6 roboto-bold" href="">문의 사항</a>
-              <div class="bg-white text-sm">
-                <h4 class="px-3 py-4 op-5 m-0 roboto-bold">
-                  통계
-                </h4>
-                <hr class="my-0">
-                <div class="row text-center d-flex flex-row op-7 mx-0">
-                  <div class="col-sm-6 flex-ew text-center py-3 border-bottom border-right"> <a
-                      class="d-block lead font-weight-bold" href="#"><%= data.length %></a> 개의 글 </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
-    <script type="text/javascript">
+                        <script type="text/javascript">
 
-    </script>
+                        </script>
 </body>
 <link rel="stylesheet" href="stylesheets/style.css">
+
 </html>
