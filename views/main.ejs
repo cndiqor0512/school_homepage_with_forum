@@ -13,7 +13,11 @@
 </head>
 <style>
 .postDate{
-font-size:13px;
+font-size:11px;
+}
+h2{
+font-family: sans-serif;
+font-weight:30;
 }
 </style>
 
@@ -24,19 +28,21 @@ font-size:13px;
             <!-- Main content -->
 
             <h1 style="color:black;font-weight:bold">XX학교</h1>
+            <span style="float:right">
+                <% if(loginSuccess){ %>
+                <div class="alert alert-primary" role="alert">
+                    로그인 성공!
+                </div>
+                <button class="btn btn-secondary" onclick="location.href='/logout'">로그아웃</button>
+                <% } else { %>
+                <button class="btn btn-primary" onclick="location.href='/register'">회원가입</button>
+                <button class="btn btn-primary" onclick="location.href='/login'">로그인</button>
+                <% } %>
+            </span>
             <hr>
             <br>
             <div>
-                <% if(loginSuccess){ %>
-                    <div class="alert alert-primary" role="alert">
-                        로그인 성공!
-                    </div>
-                    <button class="btn btn-secondary" onclick="location.href='/logout'">로그아웃</button>
-                    <% } else { %>
-                        <button class="btn btn-primary" onclick="location.href='/register'">회원가입</button>
-                        <button class="btn btn-primary" onclick="location.href='/login'">로그인</button>
-                        <% } %>
-                            <div><br></div>
+
                             <div class="row text-left mb-5">
                                 <div class="col-lg-6 mb-3 mb-sm-0">
                                     <div class="dropdown">
@@ -68,24 +74,24 @@ font-size:13px;
 
                             <div>
                                 <!--첫째 줄-->
-                                <div style="height:400px">
+                                <div style="height:300px">
                                     <div class="row">
                                         <div class="col-sm">
                                             <div>
                                                 <h2>학교</h2>
                                                 <ul class="list-group">
                                                     <% for(var i=0; i < data.mainBoardSchool.length; i++) { %>
-                                                        <li class="list-group-item" style="height:70px">
+                                                        <li class="list-group-item" style="height:50px">
                                                             <a href="/school/text/<%= i %>" class="text-primary">
                                                                 <%= data.mainBoardSchool[i].title %>
                                                             </a>
-                                                            <div class="postDate">
+                                                            <span class="postDate">
                                                             <span class="text-sm" style="float:right"><span
                                                                     class="op-6">Posted</span> <a class="text-black"
-                                                                    href="#">
+                                                                                                  href="#">
                                                                     <%= data.mainBoardSchool[i].regDate %>
                                                                 </a></span>
-                                                                <div>
+                                                                <span>
                                                         </li>
                                                         <% } %>
                                                 </ul>
@@ -97,17 +103,17 @@ font-size:13px;
                                                 <ul class="list-group">
                                                     <% for(var i=0; i < data.mainBoardClub.length; i++) { %>
 
-                                                        <li class="list-group-item" style="height:70px">
+                                                        <li class="list-group-item" style="height:50px">
                                                             <a href="/club/text/<%= i %>" class="text-primary">
                                                                 <%= data.mainBoardClub[i].title %>
                                                             </a>
-                                                            <div class="postDate">
+                                                            <span class="postDate">
                                                             <span class="text-sm" style="float:right"><span
                                                                     class="op-6">Posted</span> <a class="text-black"
                                                                     href="#">
                                                                     <%= data.mainBoardClub[i].regDate %>
                                                                 </a></span>
-                                                                </div>
+                                                                </span>
                                                         </li>
                                                         <% } %>
                                                 </ul>
@@ -117,17 +123,17 @@ font-size:13px;
                                             <h2>학급</h2>
                                             <ul class="list-group">
                                                 <% for(var i=0; i < data.mainBoardClass.length; i++) { %>
-                                                    <li class="list-group-item" style="height:70px">
+                                                    <li class="list-group-item" style="height:50px">
                                                         <a href="/class/text/<%= i %>" class="text-primary">
                                                             <%= data.mainBoardClass[i].title %>
-                                                            <div class="postDate">
                                                         </a>
+                                                        <span class="postDate">
                                                         <span class="text-sm" style="float:right"><span
                                                                 class="op-6">Posted</span> <a class="text-black"
                                                                 href="#">
                                                                 <%= data.mainBoardClass[i].regDate %>
                                                             </a></span>
-                                                            </div>
+                                                            </span>
                                                     </li>
                                                     <% } %>
                                             </ul>
@@ -140,7 +146,7 @@ font-size:13px;
                             </div>
                             <br>
                             <!--둘째 줄-->
-                            <div style="height:420px">
+                            <div style="height:320px">
                                 <div class="row">
                                     <div class="col-sm">
                                         <div>
@@ -148,17 +154,17 @@ font-size:13px;
                                             <ul class="list-group">
                                                 <% for(var i=0; i < data.mainCommunity.length; i++) { %>
                                                     <!-- End of post 12 -->
-                                                    <li class="list-group-item" style="height:70px">
+                                                    <li class="list-group-item" style="height:50px">
                                                         <a href="/community/text/<%= i %>" class="text-primary">
                                                             <%= data.mainCommunity[i].title %>
                                                         </a>
-                                                        <div class="postDate">
+                                                        <span class="postDate">
                                                         <span class="text-sm" style="float:right"><span
                                                                 class="op-6">Posted</span> <a class="text-black"
                                                                 href="#">
                                                                 <%= data.mainCommunity[i].regDate %>
                                                             </a></span>
-                                                            </div>
+                                                            </span>
                                                     </li>
                                                     <% } %>
                                             </ul>
@@ -170,11 +176,11 @@ font-size:13px;
                                             <ul class="list-group">
                                                 <% for(var i=0; i < data.mainNotice.length; i++) { %>
 
-                                                    <li class="list-group-item" style="height:70px">
+                                                    <li class="list-group-item" style="height:50px">
                                                         <a href="/notice/text/<%= i %>" class="text-primary">
                                                             <%= data.mainNotice[i].title %>
                                                         </a>
-                                                        <div class="postDate">
+                                                        <span class="postDate">
                                                         <span class="text-sm" style="float:right"><span
                                                                 class="op-6">Posted</span> <a class="text-black"
                                                                 href="#">
@@ -189,16 +195,16 @@ font-size:13px;
                                     <div class="col-sm">
                                         <div>
                                             <h2>일정</h2>
-                                            <ul class="list-group"">
+                                            <ul class="list-group">
                                         <% for(var i = 0; i < data.mainCalendar.length; i++) { %>
-                                            <li class=" list-group-item" style="height:70px">
+                                            <li class=" list-group-item" style="height:50px">
                                                 <%= data.mainCalendar[i].event %>
-                                                <div>
+                                                <span>
                                                     <span class="text-sm" style="float:right"><span
                                                             class="op-6">on</span> <a class="text-black" href="#">
                                                             <%= data.mainCalendar[i].date %>
                                                         </a></span>
-                                                        </div>
+                                                        </span>
                                                     </li>
                                                     <% } %>
                                             </ul>
