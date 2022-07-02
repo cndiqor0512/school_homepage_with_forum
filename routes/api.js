@@ -51,7 +51,7 @@ let options_login = {uri: 'http://localhost:8080/api/login', method: 'POST', bod
 let loginSuccess = false;
 /* GET home page. */
 
-router.get('/main', function (req, res, next) {
+router.get('', function (req, res, next) {
 
     request(options, function (err, response, body) {
         //callback
@@ -220,6 +220,10 @@ router.get('/logout', function (req, res, next) {
         bodyParsedLogout.loginSuccess = loginSuccess;
         res.render("main", {data: bodyParsedLogout, loginSuccess: bodyParsedLogout.loginSuccess});
     })
+})
+
+router.get('/', function(req,res,next){
+    res.render("test");
 })
 
 
